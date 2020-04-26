@@ -1,0 +1,11 @@
+// #fig5 {
+//     padding-left: 30px;
+//     padding-right: 30px;
+// }
+
+
+.post-header::before {
+    background-image: url('../imgs/bg/1.png');
+    // background-color: pink;
+    height: 300px !important;
+}
