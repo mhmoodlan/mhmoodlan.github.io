@@ -12,7 +12,7 @@ animejs: 'true'
 
 ### Introduction
 
-Working with probability theory requires understanding its two worlds, discrete and continuous. While the discrete case can be straightforward to understand, the continuous one can be a little bit more tricky, yet crucial to fully utilize the tools of probability theory. Here I share my notes while going through the [Introduction to Probability book](http://athenasc.com/probbook.html){:target="_blank"} by D. Bertsekas and J. Tsitsiklis, and its [accompanying lectures](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/){:target="_blank"}.
+Working with probability theory requires understanding its two discrete and continuous worlds. While the discrete case can be straightforward to understand, the continuous one can be a little bit more tricky, yet crucial to fully utilize the tools of probability theory. Here I share my notes while going through the [Introduction to Probability book](http://athenasc.com/probbook.html){:target="_blank"} by D. Bertsekas and J. Tsitsiklis, and its [accompanying lectures](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/){:target="_blank"}.
 
 The main purpose of this post is to visually illustrate how conditional densities are formed. Having a visual model of these concepts can aid our intuition around other composite concepts such as Bayes' rule and conditional expectation as a random variable or an estimator.
 
