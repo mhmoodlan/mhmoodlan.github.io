@@ -137,7 +137,7 @@ In this work, four main steps were applied to ensure that synthesized data is as
 
 1. Generated images have a randomly chosen background from a set of 48 images. Some of these backgrounds were taken from the books mentioned above and others from Unsplash.com. Adding these backgrounds makes the generated images look as if they were written on paper. The opacity of the selected background is randomized as well.
 
-2. Out of the 48 backgrounds, only 33 contain transparent text from the page beneeth it. The remainder 15 don't contain any transparent text. For the latter images, a random word is taken from a word list without replacement and its color intensity is set randomly within a certain range to make it look as if it was transparent. The font type, size, and position of the selected word are all randomized as well. The used word list is a cleaned (words containing english letters and punctuations were removed) version of the [CNN word list](https://github.com/mhmoodlan/arabic-font-classification/releases/download/v1.0/cnn-wordlist-cleaned.csv){:target="_blank"}.
+2. Out of the 48 backgrounds, only 33 contain transparent text from the page beneeth it. The remainder 15 don't contain any transparent text. For the latter images, a random word is taken from a word list without replacement and its color intensity is set randomly within a certain range to make it look as if it was transparent. The font type, size, and position of the selected word are all randomized as well. The used word list is a cleaned (words containing english letters and punctuations were removed) version of the [CNN word list](https://github.com/mhmoodlan/arabic-font-classification/releases/tag/v0.1.0){:target="_blank"}.
 
 3. A random number is chosen in the range [1, 3] representing the number of words to be rendered. These words are randomly chosen from the word list without replacement to prevent word repetition, which produces small sentences that don't make any semantical sense. This is preferable since the choice of words and their placement in the sentence don't contribute to the type of font used. The position, intensity of color, and font size of the chosen words are all chosen randomly as well.
 
@@ -179,7 +179,7 @@ The dataset is splitted into 4 subsets during experimentation (validation mode):
 </div>
 {:/}
 
-The dataset can be downloaded from [this repository](https://github.com/mhmoodlan/arabic-font-classification/releases/download/v1.0/rufa.tar.gz){:target="_blank"}.
+The dataset can be downloaded from [this repository](https://github.com/mhmoodlan/arabic-font-classification/releases/tag/v0.1.0){:target="_blank"}.
 
 ### 5. Model and Results
 
@@ -225,7 +225,7 @@ The following are some of the limitations of this work and suggestions on how to
 
 This work shows that even with advanced frameworks that are designed to make large parts of developing machine learning systems accessible, and even when considering a simple task such as binary font classification, there are still many challenges to be addressed in order to develop a useable system, such as data scarcity and domain mismatch.
 
-In this project, a dataset of 40,516 images was created consisting of 40,000 synthesized images and 516 real images. A data synthesization process was presented and analyized to overcome the domain mismatch problem. The dataset is available for download [from this repo](https://github.com/mhmoodlan/arabic-font-classification/releases/download/v1.0/rufa.tar.gz){:target="_blank"}. To reproduce results presented here and to further explore the dataset, you can [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mhmoodlan/arabic-font-classification/tree/master/notebooks/arabic_font_classification.ipynb). Finally, a [codebase](https://github.com/mhmoodlan/arabic-font-classification/){:target="_blank"} organizing the training and deployment code is open-sourced.
+In this project, a dataset of 40,516 images was created consisting of 40,000 synthesized images and 516 real images. A data synthesization process was presented and analyized to overcome the domain mismatch problem. The dataset is available for download [from this repo](https://github.com/mhmoodlan/arabic-font-classification/releases/tag/v0.1.0){:target="_blank"}. To reproduce results presented here and to further explore the dataset, you can [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mhmoodlan/arabic-font-classification/tree/master/notebooks/arabic_font_classification.ipynb). Finally, a [codebase](https://github.com/mhmoodlan/arabic-font-classification/){:target="_blank"} organizing the training and deployment code is open-sourced.
 
 ### 8. References
 
