@@ -11,7 +11,7 @@ animejs: 'true'
 tfjs: 'true'
 ---
 
-### Table of Content
+### Table of Contents
 
 1. [Introduction](#1-introduction)
 2. [(Some) Related Work](#2-some-related-work)
@@ -225,7 +225,7 @@ The following are some of the limitations of this work and suggestions on how to
 
 This work shows that even with advanced frameworks that are designed to make large parts of developing machine learning systems accessible, and even when considering a simple task such as binary font classification, there are still many challenges to be addressed in order to develop a useable system, such as data scarcity and domain mismatch.
 
-In this project, a dataset of 40,516 images was created consisting of 40,000 synthesized images and 516 real images. A data synthesization process was presented and analyized to overcome the domain mismatch problem. The dataset is available for download [from this repo](https://github.com/mhmoodlan/arabic-font-classification/releases/tag/v0.1.0){:target="_blank"}. To reproduce results presented here and to further explore the dataset, you can [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mhmoodlan/arabic-font-classification/tree/master/notebooks/arabic_font_classification.ipynb). Finally, a [codebase](https://github.com/mhmoodlan/arabic-font-classification/){:target="_blank"} organizing the training and deployment code is open-sourced.
+In this project, a dataset of 40,516 images was created consisting of 40,000 synthesized images and 516 real images. A data synthesization process was presented and analyized to overcome the domain mismatch problem. The dataset is available for download [from this repo](https://github.com/mhmoodlan/arabic-font-classification/releases/tag/v0.1.0){:target="_blank"}. To reproduce results presented here and to further explore the dataset, you can [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mhmoodlan/arabic-font-classification/blob/master/codebase/code/notebooks/arabic_font_classification.ipynb). Finally, a [codebase](https://github.com/mhmoodlan/arabic-font-classification/){:target="_blank"} organizing the training and deployment code is open-sourced.
 
 ### 8. References
 
