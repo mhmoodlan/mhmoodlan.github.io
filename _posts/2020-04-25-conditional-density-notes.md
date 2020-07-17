@@ -4,7 +4,7 @@ title: 'Conditional Density Notes'
 date: 2020-04-25 01:46:00 +0300
 author: 'Mahmoud Aslan'
 style: 'cond-density-notes'
-script: 'cond-density-notes'
+script: ['cond-density-notes.min.js']
 tags: [math, probability]
 mathjax: 'true'
 animejs: 'true'
@@ -12,13 +12,13 @@ animejs: 'true'
 
 ### Introduction
 
-Probability theory is one of the foundational pillars of machine learning. Here I share my notes while going through the [Introduction to Probability book](http://athenasc.com/probbook.html) and its [accompanying lectures](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/).
+Working with probability theory requires understanding its two worlds, discrete and continuous. While the discrete case can be straightforward to understand, the continuous one can be a little bit more tricky, yet crucial to fully utilize the tools of probability theory. Here I share my notes while going through the [Introduction to Probability book](http://athenasc.com/probbook.html){:target="_blank"} by D. Bertsekas and J. Tsitsiklis, and its [accompanying lectures](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/){:target="_blank"}.
 
-The main purpose of this post is to visually illustrate how conditional densities are formed. Having such a visual model of these concepts can aid our intuition around other composite concepts such as Bayes' rule and conditional expectation as a random variable or even when it is treated as an estimator.
+The main purpose of this post is to visually illustrate how conditional densities are formed. Having a visual model of these concepts can aid our intuition around other composite concepts such as Bayes' rule and conditional expectation as a random variable or an estimator.
 
 ### Sample Space, Random Variables, and Events
 
-Consider an experiment where we choose at random a number from the real line. The set of all possible outcomes of such an experiment is called the sample space {::nomarkdown}\({ \Omega }\){:/}, and for this particular one the sample space is all real numbers.
+Consider an experiment where we choose at random a number from the real line. The set of all possible outcomes of such an experiment is called the sample space {::nomarkdown}\({ \Omega }\){:/}, and for this particular one the sample space is all the real numbers.
 
 We define a random variable as a function of the sample space, i.e., it maps each outcome of the experiment to a real number. In the previous example, a function {::nomarkdown} \({X}\) {:/} that doubles each outcome is a random variable. So if the outcome of the experiment was 2.1, then the random variable X would take the value 2.1*2 = 4.2.
 
@@ -40,7 +40,7 @@ An event is defined as a group of one or more outcomes from the sample space. Fo
 
 ### Conditioning a Random Variable on an Event
 
-If we know that {::nomarkdown} \({A}\) {:/} has occurred, where {::nomarkdown} \({A}\) {:/} is the event that the output of the experiment falls within {::nomarkdown} \({[a, b]}\) {:/}, then it is reasonable to rethink our probabilities since now all outcomes outside the range {::nomarkdown} \({[a, b]}\){:/} are impossible with zero probability and hence zero density.
+If we know that {::nomarkdown} \({A}\) {:/} has occurred, where {::nomarkdown} \({A}\) {:/} is the event of the output falling within {::nomarkdown} \({[a, b]}\) {:/}, then it is only reasonable to rethink our probabilities since now all outcomes outside the range {::nomarkdown} \({[a, b]}\){:/} are impossible with zero probability and hence zero density.
 
 We defined the sample space earlier as the set of all possible outcomes, when conditioning on {::nomarkdown} \({A}\) {:/}, a subset of these outcomes are no longer possible, therefore, conditioning on {::nomarkdown} \({A}\) {:/} defines a new set of possible outcomes, i.e. a new sample space.
 
@@ -64,11 +64,11 @@ To further illustrate the idea of normalization, consider the following discrete
 
 In the continuous world, instead of dividing by the sum we divide by the integral (area under the curve) as shown in the conditional density formula:
 
-{::nomarkdown}
+<div class="equation-container">
 $$
 f_{X|A}(x) = \frac{f_X(x)}{\int_A f_X(x) dx}
 $$
-{:/}
+</div>
 
 {::nomarkdown}
 <div id="fig3" class="svg-container">
@@ -85,11 +85,12 @@ $$
 ### Conditioning 2 Random Variables on an Event
 
 Let {::nomarkdown} \({X, Y}\) {:/} be two random variables with joint density described by {::nomarkdown} \({f_{X, Y}}\) {:/}. Let {::nomarkdown} \({C}\) {:/} be an event which makes these two random variables take values only within {::nomarkdown} \({[a, b]}\) {:/} and {::nomarkdown} \({[c, d]}\) {:/} respectively. If we were told that {::nomarkdown} \({C}\) {:/} happend, then the conditional joint density of {::nomarkdown} \({X, Y}\) {:/} is equal to zero for values outside {::nomarkdown} \({C}\) {:/} and given by the following formula for values within {::nomarkdown} \({C}\) {:/}:
-{::nomarkdown}
+
+<div class="equation-container">
 $$
 {f_{X, Y| C}(x, y) = \frac{f_{X, Y}(x, y)}{P(C)} = \frac{f_{X, Y}(x, y)}{\int_C f_{X, Y}(x, y) dx dy}}
 $$
-{:/}
+</div>
 
 This computation can be illustrated as follows:
 
@@ -109,11 +110,11 @@ This computation can be illustrated as follows:
 
 Another important case is when two random variable are related, in which case restrictions to one random variable's range of values might affect the range of the other. Let {::nomarkdown} \({X, Y}\) {:/} be random variables whose joint density is given by {::nomarkdown} \({f_{X, Y}}\) {:/}. If we were told that {::nomarkdown} \({X}\) {:/} took the value {::nomarkdown} \({x}\) {:/}, then that should affect our beliefs about both {::nomarkdown} \({X}\) {:/} and {::nomarkdown} \({Y}\) {:/}. For {::nomarkdown} \({X}\) {:/}, all values other than {::nomarkdown} \({x}\) {:/} will have zero probability/density, since we now know that {::nomarkdown} \({X = x}\) {:/}. For {::nomarkdown} \({Y}\) {:/}, the conditional density formula is used to update our beliefs about its different values, which is given by:
 
-{::nomarkdown}
+<div class="equation-container">
 $$
 {f_{Y|X=x} (y | x) = \frac{f_{X, Y}(x, y)}{\int_{y = -\infty}^{\infty} f_{X, Y} (x, y) dy}}
 $$
-{:/}
+</div>
 
 This computation can be illustrated as follows:
 
