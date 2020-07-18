@@ -13,24 +13,43 @@ layout: default
     <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
     <ul class="post-list">
         {%- for post in site.posts -%}
-        <a class="post-link" href="{{ post.url | relative_url }}">
 
-            <li>
+        {% if post.external_url %}
+        <a class="post-link" href="{{ post.external_url }}" target=" _blank">
+            {% else %}
+            <a class="post-link" href="{{ post.url | relative_url }}">
+                {% endif %}
+                <!-- <a class="post-link" href="{{ post.url | relative_url }}"> -->
+
+                <li>
 
 
-                {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-                <span class="post-meta">{{ post.date | date: date_format }}</span>
+                    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                    <span class="post-meta">{{ post.date | date: date_format }}</span>
 
-                <h3>{{ post.title | escape }}</h3>
+                    {%if post.external_url %}
 
+                    <h3>{{ post.title | escape }}
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-external-link"
+                            width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#04387c" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5" />
+                            <line x1="10" y1="14" x2="20" y2="4" />
+                            <polyline points="15 4 20 4 20 9" />
+                        </svg>
+                    </h3>
+                    {%else%}
+                    <h3>{{ post.title | escape }}</h3>
+                    {%endif%}
 
-                {%- if site.show_excerpts -%}
-                {{ post.excerpt }}
-                {%- endif -%}
-            </li>
-        </a>
+                    {%- if site.show_excerpts -%}
+                    {{ post.excerpt }}
+                    {%- endif -%}
+                </li>
+            </a>
 
-        {%- endfor -%}
+            {%- endfor -%}
     </ul>
 
     <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
