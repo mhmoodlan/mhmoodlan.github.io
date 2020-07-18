@@ -13,7 +13,18 @@ window.onload = () => {
     var GL_fontSizeList = ['30px', '40px', '50px', '60px', '70px']
     var GL_fontList = ['ArefRuqaa', 'WebNastaliq']
 
-    Promise.all([fontA.load(), fontB.load()]).then(function () {
+    Promise.all([fontA.load(), fontB.load()]).then(
+        initDemo
+        , function (e) {
+            console.log(e);
+            Promise.all([fontA.load(), fontB.load()]).then(
+                initDemo
+                , function (err) {
+                    console.log(err);
+                });
+        });
+
+    function initDemo() {
 
         drawText(document.getElementById('input-text').value)
 
@@ -117,10 +128,7 @@ window.onload = () => {
             var text = e.target.value
             drawText(text)
         }
-
-
-
-    }, function () { console.log('Error loading fonts') });
+    }
 
     function drawText(text) {
         GL_ctx.fillStyle = "white"
