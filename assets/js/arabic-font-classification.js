@@ -16,7 +16,7 @@ window.onload = () => {
     Promise.all([fontA.load(), fontB.load()]).then(
         initDemo
         , function (e) {
-            console.log(e);
+            console.log(e, 'Error loading fonts, trying again...');
             Promise.all([fontA.load(), fontB.load()]).then(
                 initDemo
                 , function (err) {
