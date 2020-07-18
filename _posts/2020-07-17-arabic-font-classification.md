@@ -59,7 +59,12 @@ The following is a live demo using Tensorflow.js. Bear in mind that the model wa
   <canvas id="canvas" width="100" height="100">Your browser doesn't support canvas</canvas>
   <div id="prediction">
     <div class="tooltip-text">Prediction</div>
+    <div class="prediction-container-wrapper">
+    <div class="prediction-icon">
+    {%include imgs/arabic-font-classification/prediction-icon.svg%}
+    </div>
     <div id="prediction-container">-</div>
+    </div>
     <div id="loading-model-text"></div>
   </div>
 </div>

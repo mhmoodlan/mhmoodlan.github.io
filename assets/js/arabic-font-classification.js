@@ -171,6 +171,8 @@ window.onload = () => {
     }
 
     function predict(img) {
+        GL_resultDiv.innerHTML = ' '
+        document.querySelector('.prediction-container-wrapper .prediction-icon svg').classList.add('predict')
         if (GL_model == null) {
             loadModel().then(() => {
                 predict_()
@@ -195,6 +197,7 @@ window.onload = () => {
                 imgds = tf.data.array([imgtensor])
                 imgds = imgds.batch(1)
                 GL_model.predict(imgtensor).data().then((e) => {
+                    document.querySelector('.prediction-container-wrapper .prediction-icon svg').classList.remove('predict')
                     GL_resultDiv.innerHTML = parseFloat(e.toString()) > 0.5 ? 'Ruqaa' : 'Nastaliq (Farsi)'
                     // console.log(e)
                 })
