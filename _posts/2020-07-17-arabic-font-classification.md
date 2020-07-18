@@ -14,7 +14,7 @@ tfjs: 'true'
 ### Table of Contents
 
 1. [Introduction](#1-introduction)
-2. [(Some) Related Work](#2-some-related-work)
+2. [Related Work](#2-some-related-work)
 3. [Demo](#3-demo)
 4. [Data](#4-data)
 5. [Model & Results](#5-model-and-results)
@@ -30,21 +30,21 @@ The task of font classification/recognition/visual font recognition (VFR), is to
 
 - Improving other tasks, such as optical character recognition (OCR). Identifying the used font in a document then using an OCR model specialized to work with that particular font will improve the accuracy and time complexity of the system, rather than using one model to deal with all the different fonts [[1, 7](#8-references)].
 
-- It can be used as a complementary part of a product. Companies like Google, Snapchat, and Adobe has been interested in this technology in order to increase the productivity of their products' users [[3](#8-references)]. For example, [DeepFont](https://www.youtube.com/watch?v=5eJ3IXYcw3M&t=124){:target="_blank"} was developed as part of Adobe Photoshop to detect and suggest similar fonts from images. MyFonts.com also introduced a tool called [WhatTheFont](https://www.myfonts.com/WhatTheFont/){:target="_blank"} as an on-the-fly font recognition tool.
+- It can be used as a complementary part of a product. Companies like Google, Snapchat, and Adobe have been interested in this technology in order to increase the productivity of their products' users [[3](#8-references)]. For example, [DeepFont](https://www.youtube.com/watch?v=5eJ3IXYcw3M&t=124){:target="_blank"} was developed as part of Adobe Photoshop to detect and suggest similar fonts from images. MyFonts.com also introduced a tool called [WhatTheFont](https://www.myfonts.com/WhatTheFont/){:target="_blank"} as an on-the-fly font recognition tool.
 
 - It can be used by font creators to detect and find copyright infringements [[7](#8-references)].
 
 This project aims to tackle a simplified version of the font recognition problem. The task is to classify images of text written using Arabic letters into two classes of Arabic fonts: Ruqaa and Nastaliq (Farsi). An Arabic font here refers to a form of writing that uses Arabic letters regardless of the language it's been written in. As shown in [4](#4-data), a dataset was synthesized to solve the data scarcity problem. Additionally, a synthesization process is presented to overcome domain mismatch, a common challenge introduced by synthesized data, in which the training data distribution differs from the testing one, leading to a serious drop in performance. Finally in [5](#5-model-and-results), a model is trained on the mentioned dataset and its performance is analyzed as more synthesization steps were introduced. Results demonstrate the effectiveness of the synthesization process, which alleviates the domain mismatch problem by a factor of 29% allowing the model to reach 97% accuracy.
 
-### 2. (Some) Related Work
+### 2. Related Work
 
 Different approaches have been applied to address the VFR problem. Some are based on novel feature extraction techniques [[2](#8-references)], other are deep learning based solutions. Very few work has been done on Arabic VFR, mostly attributed to the lack of data. The only reasonbly sized dataset is the King Fahd Univeristy Arabic Font Database (KAFD) [[4](#8-references)], which is available online, however, at the time of writing the download page renders error messages when requesting to download the dataset, which hindered using it in this project.
 
-In [[1](#8-references)], Tensmeyer et al. train a convolutional neural network (CNN) on KAFD by densely croping each image into patches and then averaging the individual predicitons made on these patches to determine the final decision, which appears to improve performance.
+Tensmeyer et al.[[1](#8-references)] train a convolutional neural network (CNN) on KAFD by densely croping each image into patches and then averaging the individual predicitons made on these patches to determine the final decision, which appears to improve performance.
 
 DeepFont [[3](#8-references)] focuses on both data and model. They show how to synthesis data to resemble real world text images. They generate a relatively large sized dataset, which is exploited along with unlabeled real data in an unsupervised way to learn feature maps using Stacked Convolutional Autoencoders (SCAE). These feature maps are then used as an initial state for parts of a CNN trained in a supervised fashion using synthetic data only. This method addresses the domain mismatch problem between training- and prediction-time data.
 
-Since real world Arabic font images are hard to obtain, the main theme of this project is to explore how to properly synthesize such Arabic text images. In particular, the patching method from [[1](#8-references)] was mimicked while creating the dataset. Additionally, the synthesization steps discussed in [4](#4-data) are inspired from [[3](#8-references)].
+Since real world Arabic font images are hard to obtain, the main theme of this project is to explore how to properly synthesize such Arabic text images. In particular, the patching method from [[1](#8-references)] was mimicked while creating the dataset. Additionally, the synthesization steps discussed in [4](#4-data) are inspired by [[3](#8-references)].
 
 ### 3. Demo
 
@@ -111,11 +111,11 @@ This method requires an Arabic keyboard. Type the desired text in the following 
 
 This section discusses the data problems related to Arabic VFR and the measures taken to solve them.
 
-**<u>Data scarcity</u>** Having a clean real-world representative dataset is the corner stone of success in tackling any machine learning problem. As mentioned earlier, there are no relevant Arabic fonts datasets other than KAFD. Although KAFD is not perfectly suitable for this particular task, it can be used, if available, in unsupervised pretraining. One strong reason for this lack of datasets is that real world data sources for Arabic fonts are not easily accessible. For the task at hand, these resources include old books containing handwritten text in various Arabic fonts. Only a small number of such books are digitalized and made available online, which limits datasets creation only to those who have direct access to physical copies.
+**<u>Data scarcity</u>** Having a clean real-world representative dataset is the corner stone of success in tackling any machine learning problem. As mentioned earlier, there are no relevant Arabic fonts datasets other than KAFD. Although KAFD is not perfectly suitable for this particular task, it can be used, if available, in unsupervised pretraining. One strong reason for this lack of datasets is that real world data sources for Arabic fonts are not easily accessible. For the task at hand, these resources include old books containing handwritten text in various Arabic fonts. Only a small number of such books are digitized and made available online, which limits dataset creation only to those who have direct access to physical copies.
 
 Fortunately, I own a book titled *"The Rules of Arabic Calligraphy"* by Hashem Al-Khatat - 1986, which covers 6 Arabic fonts, namely: Thuluth, Nasikh, Nastaliq (Farsi), Diwani, Ruqaa, and Ijaza. Another book I found online is titled *"Ottman Fonts"* by Muhammad Amin Osmanli Ketbkhana, which is most probably written in Turkish back when they used Arabic letters. The fact that these two books are in different languages (the first is in Arabic and the second in Turkish) ensures that the learned model won't be biased towards one langauge or another, which is desierable since classifying fonts is content independent and style dependent. So for example the same word (content) written in two different fonts (style) should be classified into two different classes corresponding to the fonts they were written in.
 
-Eventhough these books cover multiple fonts, however, extracting images from them generates only 250 images per font. This small number of samples makes learning, even when using shallow machine learning models, subject to sever overfitting or in some cases not learning at all, as is the case when using deep models.
+Even though these books cover multiple fonts, extracting images from them generates only 250 images per font. This small number of samples makes learning, even when using shallow machine learning models, subject to severe overfitting or in some cases no learning at all, as is the case when using deep models.
 
 Another thing to take into account is that we can only use images of fonts that have available digital typefaces, in order to be able to synthesis data of that particular font. In this work, two fonts satisfy this condition: Ruqaa and Nastaliq (Farsi) with their digital counterparts: [Aref Ruqaa](https://github.com/alif-type/aref-ruqaa){:target="_blank"} and [Iran Nastaliq Web](https://github.com/font-store/font-IranNastaliq){:target="_blank"} respectively. Therefore, our real world data constitutes of 516 images distributed between 2 classes with ~250 images each, which were manually extracted at 200×200px and then resized to 100×100px using GIMP. The text in the extracted images varies in its font size, position, and whether it represents whole or partitions of words.
 
@@ -137,9 +137,9 @@ In this work, four main steps were applied to ensure that synthesized data is as
 
 1. Generated images have a randomly chosen background from a set of 48 images. Some of these backgrounds were taken from the books mentioned above and others from Unsplash.com. Adding these backgrounds makes the generated images look as if they were written on paper. The opacity of the selected background is randomized as well.
 
-2. Out of the 48 backgrounds, only 33 contain transparent text from the page beneeth it. The remainder 15 don't contain any transparent text. For the latter images, a random word is taken from a word list without replacement and its color intensity is set randomly within a certain range to make it look as if it was transparent. The font type, size, and position of the selected word are all randomized as well. The used word list is a cleaned (words containing english letters and punctuations were removed) version of the [CNN word list](https://github.com/mhmoodlan/arabic-font-classification/releases/tag/v0.1.0){:target="_blank"}.
+2. Out of the 48 backgrounds, only 33 contain transparent text from the page beneeth it. The remaining 15 don't contain any transparent text. For the latter images, a random word is taken from a word list without replacement and its color intensity is set randomly within a certain range to make it look as if it was transparent. The font type, size, and position of the selected word are all randomized as well. The used word list is a cleaned (words containing english letters and punctuations were removed) version of the [CNN word list](https://github.com/mhmoodlan/arabic-font-classification/releases/tag/v0.1.0){:target="_blank"}.
 
-3. A random number is chosen in the range [1, 3] representing the number of words to be rendered. These words are randomly chosen from the word list without replacement to prevent word repetition, which produces small sentences that don't make any semantical sense. This is preferable since the choice of words and their placement in the sentence don't contribute to the type of font used. The position, intensity of color, and font size of the chosen words are all chosen randomly as well.
+3. A random number is chosen between 1 and 3 inclusive representing the number of words to be rendered. These words are randomly chosen from the word list without replacement to prevent word repetition, which produces small sentences that don't make any semantical sense. This is preferable since the choice of words and their placement in the sentence don't contribute to the type of font used. The position, intensity of color, and font size of the chosen words are all chosen randomly as well.
 
 4. Gaussian noise and jpeg quality reduction are applied to synthesized images. Finally, all images are converted to grayscale before training.
 
@@ -171,7 +171,7 @@ A simple web app was developed to generate these images. Given a word list file,
 
 **<u>Dataset details</u>** 20,000 images were generated from each class, Ruqaa and Nastaliq (Farsi), creating a dataset of 40,000 synthesized image. When combined with the previous 516 real image, the final dataset contains 40,516 images, which will be refered to as RuFa dataset.
 
-The dataset is splitted into 4 subsets during experimentation (validation mode): training, validation, data-mismatch, and testing subsets. The training and validation subsets are composed of synthesized data. The data-mismatch and testing subsets are composed of real data. When all the hyperparameters are tuned to their final values (testing mode), the model is retrained on the train, val, and data-mismatch subsets, and then its final performance is measured on the test set. The following figure describes dataset splitting.
+The dataset is splitted into 4 subsets during experimentation (validation mode): training, validation, data-mismatch, and testing subsets. The training and validation subsets are composed of synthesized data. The data-mismatch and testing subsets are composed of real data. In this mode, the model is trained and validated on the training and validation sets. Further validation is performed on the data-mismatch subset. When all the hyperparameters are tuned to their final values (testing mode), the model is retrained on the train, validation, and data-mismatch subsets, and then its final performance is measured on the test set. The following figure describes dataset splitting.
 
 {::nomarkdown}
 <div class="svg-container" id="fig5">
@@ -219,13 +219,13 @@ The following are some of the limitations of this work and suggestions on how to
 
   - Employing Autoencoders to remove background noise, then using these clean images for classification.
 
-- Lastely, on the product side, we can enhance the product design and user experience by implementing ways for the users to correct errors or suggest solutions and feed this information back to the model as a form of online learning. Such systems are usually called [collaborative AI systems](https://medium.com/@Ben_Reinhardt/designing-collaborative-ai-5c1e8dbc8810){:target="_blank"}.
+- Finally, on the product side, we can enhance the product design and user experience by implementing ways for the users to correct errors or suggest solutions and feed this information back to the model as a form of online learning. Such systems are usually called [collaborative AI systems](https://medium.com/@Ben_Reinhardt/designing-collaborative-ai-5c1e8dbc8810){:target="_blank"}.
 
 ### 7. Conclusion
 
 This work shows that even with advanced frameworks that are designed to make large parts of developing machine learning systems accessible, and even when considering a simple task such as binary font classification, there are still many challenges to be addressed in order to develop a useable system, such as data scarcity and domain mismatch.
 
-In this project, a dataset of 40,516 images was created consisting of 40,000 synthesized images and 516 real images. A data synthesization process was presented and analyized to overcome the domain mismatch problem. The dataset is available for download [from this repo](https://github.com/mhmoodlan/arabic-font-classification/releases/tag/v0.1.0){:target="_blank"}. To reproduce results presented here and to further explore the dataset, you can [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mhmoodlan/arabic-font-classification/blob/master/codebase/code/notebooks/arabic_font_classification.ipynb). Finally, a [codebase](https://github.com/mhmoodlan/arabic-font-classification/){:target="_blank"} organizing the training and deployment code is open-sourced.
+In this project, a dataset of 40,516 images was created consisting of 40,000 synthesized image and 516 real image. A data synthesization process was presented and analyized to overcome the domain mismatch problem. The dataset is available for download [from this repo](https://github.com/mhmoodlan/arabic-font-classification/releases/tag/v0.1.0){:target="_blank"}. To reproduce results presented here and to further explore the dataset, you can [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mhmoodlan/arabic-font-classification/blob/master/codebase/code/notebooks/arabic_font_classification.ipynb). Finally, a [codebase](https://github.com/mhmoodlan/arabic-font-classification/){:target="_blank"} organizing the training and deployment code is open-sourced.
 
 ### 8. References
 
