@@ -18,12 +18,17 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Mahmoud Aslan
+title: Mahmoud Aslan Homepage
+author: Mahmoud Aslan
 email:
 description: >-
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://mhmoodlan.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
+twitter:
+  username: mhmoodlan
+  card: 
+google_site_verification: 5kMTvCztJwM08ui3ef7pnf9C_okJKzHjXxDSyP9JXXI
 github_username:  mhmoodlan
 permalink: /blog/:title
 google_analytics: true
@@ -31,6 +36,7 @@ google_analytics: true
 markdown: kramdown
 theme: minima
 plugins:
+  - jekyll-seo-tag
   - jekyll-feed
 
 # Exclude from processing.
