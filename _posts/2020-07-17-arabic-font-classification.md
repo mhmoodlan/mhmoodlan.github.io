@@ -66,6 +66,7 @@ The following is a live demo using Tensorflow.js. Bear in mind that the model wa
     <div id="prediction-container">-</div>
     </div>
     <div id="loading-model-text"></div>
+    <div id="loading-fonts-text"><div id='loading-fonts-msg'>Error loading fonts</div><button id='retry-loading-fonts'>Retry</button></div>
   </div>
 </div>
 <div class="test-method">

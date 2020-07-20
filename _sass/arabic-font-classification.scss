@@ -170,11 +170,41 @@ label {
     text-align: center;
 }
 
-#loading-model-text {
+#loading-model-text,
+#loading-fonts-text,
+#loading-fonts-msg {
     min-height: 50px;
     text-align: center;
     transition: opacity .3s ease-in-out;
 }
+
+#loading-fonts-msg {
+    color: red;
+    text-align: center;
+    transition: opacity .3s ease-in-out;
+    line-height: 20px;
+    font-size: 12px;
+}
+
+#loading-fonts-text {
+    opacity: 0;
+}
+
+#loading-fonts-text.error {
+    opacity: 1;
+}
+
+#retry-loading-fonts {
+    background: rgb(204, 34, 34);
+    border: 0;
+    padding: 7px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #f1f1f1;
+}
+
+
 
 #loading-model-text.hidden {
     opacity: 0;

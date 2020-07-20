@@ -108,7 +108,7 @@ This computation can be illustrated as follows:
 
 ### Conditioning a Random Variable on Another
 
-Another important case is when two random variable are related, in which case restrictions to one random variable's range of values might affect the range of the other. Let {::nomarkdown} \({X, Y}\) {:/} be random variables whose joint density is given by {::nomarkdown} \({f_{X, Y}}\) {:/}. If we were told that {::nomarkdown} \({X}\) {:/} took the value {::nomarkdown} \({x}\) {:/}, then that should affect our beliefs about both {::nomarkdown} \({X}\) {:/} and {::nomarkdown} \({Y}\) {:/}. For {::nomarkdown} \({X}\) {:/}, all values other than {::nomarkdown} \({x}\) {:/} will have zero probability/density, since we now know that {::nomarkdown} \({X = x}\) {:/}. For {::nomarkdown} \({Y}\) {:/}, the conditional density formula is used to update our beliefs about its different values, which is given by:
+Another important case is when two random variables are related, in which case restrictions to one random variable's range of values might affect the range of the other. Let {::nomarkdown} \({X, Y}\) {:/} be two random variables whose joint density is given by {::nomarkdown} \({f_{X, Y}}\) {:/}. If we were told that {::nomarkdown} \({X}\) {:/} took the value {::nomarkdown} \({x}\) {:/}, then that should affect our beliefs about both {::nomarkdown} \({X}\) {:/} and {::nomarkdown} \({Y}\) {:/}. For {::nomarkdown} \({X}\) {:/}, all values other than {::nomarkdown} \({x}\) {:/} will have zero probability/density, since we now know that {::nomarkdown} \({X = x}\) {:/}. For {::nomarkdown} \({Y}\) {:/}, the conditional density formula is used to update our beliefs about its different values, which is given by:
 
 <div class="equation-container">
 $$

@@ -13,19 +13,26 @@ window.onload = () => {
     var GL_fontSizeList = ['30px', '40px', '50px', '60px', '70px']
     var GL_fontList = ['ArefRuqaa', 'WebNastaliq']
 
-    Promise.all([fontA.load(), fontB.load()]).then(
-        initDemo
-        , function (e) {
-            console.log(e, 'Error loading fonts, trying again...');
-            Promise.all([fontA.load(), fontB.load()]).then(
-                initDemo
-                , function (err) {
-                    console.log(err);
-                });
-        });
+    function loadFonts() {
+        Promise.all([fontA.load(), fontB.load()]).then(
+            initDemo
+            , function (e) {
+                console.log(e, 'Error loading fonts, trying again...');
+                Promise.all([fontA.load(), fontB.load()]).then(
+                    initDemo
+                    , function (err) {
+                        document.getElementById('loading-fonts-text').classList.add('error')
+                        console.log(err);
+                    });
+            });
+    }
+
+    document.getElementById('retry-loading-fonts').addEventListener('click', loadFonts)
+    loadFonts()
 
     function initDemo() {
 
+        document.getElementById('loading-fonts-text').classList.remove('error')
         drawText(document.getElementById('input-text').value)
 
         document.querySelectorAll('#sample-images-container img').forEach(function (el) {
