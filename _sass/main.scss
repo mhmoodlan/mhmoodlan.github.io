@@ -10,6 +10,11 @@ $accent-color: rgba(89, 40, 185, 1);
   margin: auto;
 }
 
+.svg-container .math-svg-container svg {
+  width: auto;
+  min-height: auto;
+}
+
 .footer-col-2 {
   width: 75%;
 }
