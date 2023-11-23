@@ -24,7 +24,7 @@ tfjs: 'false'
 
 Inherently interpretable models are a class of models that prioritize interpretability during the optimization process, contrasting with post-hoc interpretability methods that address interpretability after training is complete. B-cos models represent an example of inherently interpretable models. For a high-level overview, refer to this [post](https://moboehle.github.io/CoDA-Nets/){:target="_blank"}, [talk](https://www.youtube.com/watch?v=stdLYIzWWvw){:target="_blank"}, [presentation](https://www.youtube.com/watch?v=0NSSzXoWa2c){:target="_blank"}. For a more in-depth treatment, consult the papers on CoDA Nets [[1](#ref1)], B-cos Nets [[2](#ref2)], and B-cos ViTs [[3](#ref3)].
 
-In this post, I attempt to replicate one of their results on CIFAR10 ([Section 2](#2-reproducing-results)), evaluate its adversarial robustness, and compare it to naturally and adversarially trained networks, both quantitatively ([Section 3](#3-quantitative-results)) and qualitatively ([Section 4](#4-qualitative-results)). The code used to generate the results presented in this post can be found in this [notebook](https://github.com/mhmoodlan/b-cos-robustness/blob/main/b-cos-robustness.ipynb){:target="_blank"}.
+In this post, I attempt to replicate one of their results on CIFAR10 ([Section 2](#2-reproducing-results)), evaluate its adversarial robustness, and compare it to naturally and adversarially trained networks, both quantitatively ([Section 3](#3-quantitative-results)) and qualitatively ([Section 4](#4-qualitative-results)). The code used to generate the results presented in this post can be found in this [notebook](https://github.com/mhmoodlan/b-cos-robustness/blob/main/b_cos_robustness.ipynb){:target="_blank"}.
 
 ### 2. Reproducing Results
 
@@ -35,7 +35,7 @@ python train.py \
      --base_network norm_ablations_final \
      --experiment_name resnet_56-nomaxout
 ```
-The obtained test accuracy was `88.06%`, falling short of the reported `91.5%` in the paper [[3](#ref3)]. Note that exact reproduction is contingent on a multitude of factors inherent in the training environment, including the GPU hardware, package versions, and others. [Figure 1](#fig1) depicts the top-1 and top-5 accuracies on the train and evaluation sets throughout the 100 epochs of training. The trained checkpoint weights can be downloaded from [this repository](https://github.com/mhmoodlan/b-cos-robustness/releases/download/v0.1.0/cifar_bcos_resnet56_nomaxout.ckpt){:target="_blank"}.
+The obtained test accuracy was `88.06%`, falling short of the reported `91.5%` in the paper [[3](#ref3)]. Note that exact reproduction is contingent on a multitude of factors inherent in the training environment, including the GPU hardware, package versions, and others. [Figure 1](#fig1) depicts the top-1 and top-5 accuracies on the train and evaluation sets throughout the 100 epochs of training. The trained checkpoint weights can be downloaded from [this repository](https://github.com/mhmoodlan/b-cos-robustness/releases/v0.1.0/){:target="_blank"}.
 
 {::nomarkdown}
 <div id="fig1" class="svg-container">
