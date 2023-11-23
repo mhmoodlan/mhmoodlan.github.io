@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Probing B-cos Networks' Robustness"
+title: "Adversarial Robustness in B-cos Nets: A Brief Overview"
 date: 2023-11-21 08:35:00 +0300
 author: 'Mahmoud Aslan'
 style: 'bcos-robustness'
