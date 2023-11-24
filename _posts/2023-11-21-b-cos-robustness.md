@@ -11,7 +11,7 @@ animejs: 'false'
 tfjs: 'false'
 ---
 
-> *Update-23-11-2023: As correctly noted by [Navdeeppal Singh](https://github.com/mhmoodlan/b-cos-robustness/issues/1#issue-2007844720), the comparison between ResNet-50 and B-cos ResNet-56 is not fair, due to architectural, augmentation, and hyperparameter differences. A previous version of this post claimed reproducing some results from [[3](#ref3)], which was inaccurate. The post was edited to reflect those notes.*
+> *Update-23-11-2023: As correctly [noted](https://github.com/mhmoodlan/b-cos-robustness/issues/1#issue-2007844720) by Navdeeppal Singh, the comparison between ResNet-50 and B-cos ResNet-56 is not fair, due to architectural, augmentation, and hyperparameter differences. A previous version of this post claimed reproducing some results from [[3](#ref3)], which was inaccurate. The post was edited to reflect those notes.*
 
 ### Table of Contents
 
