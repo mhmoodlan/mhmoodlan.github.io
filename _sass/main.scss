@@ -25,6 +25,14 @@ $accent-color: rgba(89, 40, 185, 1);
   align-items: center;
 }
 
+.social-media-list li a {
+  font-family: 'Fira Sans' !important;
+}
+
+.social-media-list li a:hover {
+  text-decoration: underline;
+}
+
 .svg-container::before {
   content: '';
   display: block;
