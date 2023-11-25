@@ -80,7 +80,10 @@ Tables [1](#table1) and [2](#table2) present the accuracies of the models agains
 | Bcos-ResNet-56 |88.06%|0.03% / 0.03%|0.0% / 0.0%|
 | Bcos-ResNet-50 |87.42%|19.79% / 19.10%|8.33% / 7.68%|
 
-{::nomarkdown}</div>{:/}
+{::nomarkdown}
+<div class="table-caption">Table 1: CIFAR-10 test accuracy against PGD \(\ell_\infty\) attacks.</div>
+</div>
+{:/}
 
 {::nomarkdown}<div id="table2" class="table-small-numbers">{:/}
 
@@ -91,7 +94,10 @@ Tables [1](#table1) and [2](#table2) present the accuracies of the models agains
 | Bcos-ResNet-56 |88.06%|35.06% / 34.75%|13.64% / 13.20%|9.02% / 8.91%|0.0% / 0.0%|
 | Bcos-ResNet-50 |87.42%|65.64% / 65.71%|50.19% / 49.96%|33.16% / 32.04%|**15.01% / 14.57%**|
 
-{::nomarkdown}</div>{:/}
+{::nomarkdown}
+<div class="table-caption">Table 2: CIFAR-10 test accuracy against PGD \(\ell_2\) attacks.</div>
+</div>
+{:/}
 
 <!-- 
 # l2: 0.25@20 -> 0.3506
