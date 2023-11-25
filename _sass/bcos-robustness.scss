@@ -3,9 +3,11 @@
     font-size: 12px;
 }
 
-.table-small-numbers tr td {
+.table-small-numbers tr td,
+.table-small-numbers tr td strong {
     font-size: 14px;
     padding-right: 5px;
+    // padding-left: 10px;
 }
 
 .post-header::before {
