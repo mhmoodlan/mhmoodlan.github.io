@@ -354,7 +354,7 @@ ul.post-list a li h3 {
 a, a:visited {
   /* color: #28272a; */
   color: rgb(4, 56, 124);
-  font-family: 'Merriweather Black';
+  // font-family: 'Merriweather Black';
   // text-decoration: underline;
   // text-decoration-style: dotted;
 }
@@ -401,4 +401,41 @@ h1, h2, h3, h4, h5, h6 {
 
 .mjx-char {
   padding: 0 !important;
+}
+
+.fig-caption {
+  display: block;
+  position: relative;
+  margin-top: 35px; 
+  text-align: center; 
+  font-size: 14px;
+  // background-color: #e9f5ff;
+  // background-color: #e4f2f3;
+  // padding: 10px 25px;
+
+  // float: left;
+  // box-shadow: 0px 5px 5.2px -4px rgba(0, 0, 0, 0.1), 0px 5px 7px rgba(0, 0, 0, 0.075);
+  // border-radius: 5px;
+}
+
+.fig-caption svg {
+  font-size: 14px;
+}
+
+.fig-caption::before {
+  display: block;
+  content: '';
+  width: 60%;
+  height: 1px;
+  background-color: #cbe1e3;
+  position: absolute;
+  left: 20%;
+  top: -15px;
+}
+.table-caption {
+  text-align: center;
+  font-size: 14px;
+  padding-top: 0px;
+  margin-top: -25px;
+  margin-bottom: 25px;
 }
