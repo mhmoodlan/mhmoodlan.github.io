@@ -8,6 +8,7 @@ script: ['cond-density-notes.min.js']
 tags: [math, probability]
 mathjax: 'true'
 animejs: 'true'
+bg_attrib: 'Photograph courtesy of <a href="http://www.flickr.com/photos/angelaypablo/954363228">aranarth</a> on Flickr. (adapted)'
 ---
 
 ### Introduction

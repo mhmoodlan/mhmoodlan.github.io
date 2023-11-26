@@ -29,6 +29,9 @@ layout: default
       {% endfor %}
       {% endif %}
     </p>
+    {%- if page.bg_attrib -%}
+    <span class="bg-attrib">{{page.bg_attrib}}</span>
+    {%- endif -%}
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
