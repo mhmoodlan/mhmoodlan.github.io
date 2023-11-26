@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Conditional Density Notes'
+title: 'Conditional Density Notes - OCW 6.041'
 date: 2020-04-25 01:46:00 +0300
 author: 'Mahmoud Aslan'
 style: 'cond-density-notes'

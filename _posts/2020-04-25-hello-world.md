@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Hello World!'
+title: 'Hello, World!'
 date: 2020-04-25 01:45:00 +0300
 tags: ['not-tagged']
 style: 'hello-world'
