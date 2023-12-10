@@ -30,7 +30,7 @@ Inherently interpretable models are a class of models that prioritize interpreta
 
 In this post, I attempt to train two B-cos models on CIFAR10, namely B-cos ResNet-56 and B-cos ResNet-50 ([Section 2](#2-train-bcos)), evaluate their adversarial robustness, and compare it to naturally and adversarially trained networks, both quantitatively ([Section 3](#3-quantitative-results)) and qualitatively ([Section 4](#4-qualitative-results)). The code used to generate the results presented in this post can be found in this [notebook](https://github.com/mhmoodlan/b-cos-robustness/blob/main/b_cos_robustness.ipynb){:target="_blank"} or [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mhmoodlan/b-cos-robustness/blob/main/b_cos_robustness.ipynb).
 
-### 2. Training B-cos ResNet-56
+### 2. Training B-cos Nets
 
 Executing the [published code](https://github.com/B-cos/B-cos-v2){:target="_blank"} was straightforward, {::nomarkdown}<span style="color: rgb(151 151 151); text-decoration: line-through; font-style: italic;">{:/} except for the need to modify train-requirements.txt to specify PyTorch Lightning's version to be pytorch-lightning==1.9.0, as Lighting versions from 2.0.0 upwards were incompatible{::nomarkdown}</span>{:/} [fixed]. Specifically, I trained a Bcos-ResNet-56 model on CIFAR10 by running the command:
 ```bash

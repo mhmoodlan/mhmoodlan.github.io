@@ -35,7 +35,7 @@ $accent-color: rgba(89, 40, 185, 1);
 
 .svg-container::before {
   content: '';
-  display: block;
+  display: none;
   position: absolute;
   width: 100vw;
   height: 50%;
@@ -48,7 +48,7 @@ $accent-color: rgba(89, 40, 185, 1);
 
 .svg-container::after {
   content: '';
-  display: block;
+  display: none;
   position: absolute;
   left: calc(calc(90.5vw - 800px) / -2);
   top: calc(35% - 50px);
@@ -93,7 +93,10 @@ blockquote {
   left: -7.5vw;
   // transform: translateX(-50%);
   width: calc(100% + 15vw);
-  box-shadow: 0px 50px 52px -40px rgba(0, 0, 0, 0.1), 0px 50px 70px rgba(0, 0, 0, 0.075);
+  // box-shadow: 0px 50px 52px -40px rgba(0, 0, 0, 0.1), 0px 50px 70px rgba(0, 0, 0, 0.075);
+  // box-shadow: 0px 50px 52px -40px rgba(53, 0, 80, 0.055), 0px 50px 70px rgba(53, 0, 80, 0.035);
+  
+  box-shadow: 0px 50px 52px -40px rgba(53, 0, 80, 0.075), 0 15px 40px 5px rgba(53, 0, 80, 0.06)
 }
 
 @media(max-width: 860px ) {
@@ -131,6 +134,9 @@ blockquote {
 //   // z-index: -1;
 // }
 
+// .post *{
+//   color: #350050 !important;
+// }
 
 .site-footer * {
   // color: white;
@@ -142,24 +148,34 @@ body {
   // background: rgb(238,174,202);
   // background: linear-gradient(90deg, rgba(238,174,202,0.19649858234309348) 0%, rgba(148,187,233,0.202100823239452) 100%);   
 }
+
+.page-content {
+  background-color: #ffbaba08;
+}
+
 pre.highlight {
   border: 1px solid rgba($accent-color, .5);
 }
 .site-title {
-  font-family: 'Merriweather Black';
+  // font-family: 'Merriweather Black';
+  font-family: 'Rufina';
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 54px !important;
 }
 
-.site-nav a {
-  font-family: 'Fira Sans';
+.site-nav-link{
+  // font-family: 'Fira Sans';
+  font-family: 'Rufina';
+  font-size: 16px;
+  // text-transform: lowercase;
   line-height: 54px !important;
+  color: #350050 !important;
 }
 
 .post-link h3 {
   text-align: left;
-  line-height: 32px;
+  line-height: 28px;
 }
 
 * {
@@ -213,26 +229,45 @@ pre.highlight {
   //100%
   // background: rgb(238,174,202);
   // background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); 
-  background: rgb(250,235,242);
-  background: linear-gradient(90deg, rgba(250,235,242,1) 0%, rgba(228,238,249,1) 100%); 
+  background: rgb(250, 235, 242);
+  background: linear-gradient(90deg, rgb(250, 235, 242) 0%, rgba(228,238,249,0.5) 100%); 
   padding: 50px;
   border-radius: 5px;
   box-sizing: border-box;
   position: relative;
-  box-shadow: 0px 50px 52px -40px rgba(0, 0, 0, 0.1), 0px 50px 70px rgba(0, 0, 0, 0.075);
+  // box-shadow: 0px 50px 52px -40px rgba(53, 0, 80, 0.07), 0px 50px 70px rgba(53, 0, 80, 0.055);
+  
+  box-shadow: 0px 50px 52px -40px rgba(53, 0, 80, 0.075), 0px 50px 70px rgba(53, 0, 80, 0.06);
 
 }
 
-.post-meta * {
+.post-link-meta {
+  opacity: 75%;
+  font-family: 'Rufina';
+  color: #353535 !important;
+}
+
+.post-meta *, .post-link-meta {
   // font-family: 'Merriweather';
   font-weight: lighter;
   font-size: 14px;
-  color: rgb(4, 56, 124);
+  // color: rgb(4, 56, 124);
+  color: #350050 !important;
   /* opacity: 0.9; */
 }
 
+.post-link-meta {
+  font-weight: lighter;
+  font-size: 14px;
+  // color: rgb(4, 56, 124);
+  // color: #350050;
+}
+
 .post-title {
-  color: rgb(4, 56, 124);
+  // color: rgb(4, 56, 124);
+  color: #350050;
+  line-height: 1.2;
+  text-align: left;
 }
   /* .post-header>* {
     color: white;
@@ -260,7 +295,8 @@ pre.highlight {
 
 h1 {
   font-size: 36px;
-  font-family: 'Merriweather Black', 'Roboto Slab', 'Lora';
+  // font-family: 'Merriweather Black', 'Roboto Slab', 'Lora';
+  font-family: 'Rufina', 'Roboto Slab', 'Lora';
   font-weight: bolder;
   line-height: 36px;
   color: #28272a;
@@ -271,18 +307,27 @@ ul.post-list {
 }
 
 ul.post-list a {
-  margin-bottom: 25px;
+  // margin-bottom: 25px;
 }
 
-ul.post-list a li span.post-meta:hover {
+
+ul.post-list a:hover {
   text-decoration: none !important;
+}
+
+ul.post-list a:hover h3 {
+  text-decoration: underline !important;
+}
+
+ul.post-list a.external:hover h3 {
+  text-decoration: underline !important;
 }
 
 ul.post-list a li {
   // background: rgb(238,174,202);
   // background: linear-gradient(90deg, rgba(238,174,202,0.25) 0%, rgba(148,187,233,0.25) 100%); 
-  background: rgb(250,235,242);
-  background: linear-gradient(90deg, rgba(250,235,242,1) 0%, rgba(228,238,249,1) 100%); 
+  // background: rgb(250,235,242);
+  // background: linear-gradient(90deg, rgba(250,235,242,1) 0%, rgba(228,238,249,1) 100%); 
   padding: 25px 50px;
   border-radius: 5px;
   box-sizing: content-box;
@@ -321,7 +366,11 @@ ul.post-list li::after {
   height: 100%;
   top: 0;
   left: 0;
-  box-shadow: 0px 40px 52px -40px rgba(0, 0, 0, 0.15), 0px 30px 70px rgba(0, 0, 0, 0.1);
+  // x, y, blur, spread
+  // background-color: red;
+  border-radius: 5px;
+  box-shadow: 0px 40px 52px -40px rgba(53, 0, 80, 0.11), 0px 15px 70px rgba(53, 0, 80, 0.1);
+  // box-shadow: inset 10px 10px 20px 20px rgba(53, 0, 80, .1); //, inset 0px 15px 70px rgba(53, 0, 80, 0.01);
   opacity: 0;
   transition: opacity 0.2s ease-out;
 }
@@ -334,12 +383,13 @@ ul.post-list a.post-link:hover li {
   // 0 41.8px 33.4px rgba(0, 0, 0, 0.045),
   // 0 100px 80px rgba(0, 0, 0, 0.05);
   // box-shadow: 0px 40px 52px -40px rgba(0, 0, 0, 0.15), 0px 30px 70px rgba(0, 0, 0, 0.1);
-  transform: translateY(-5px);
+  // transform: translateY(-4px);
   // z-index: 100;
+  
 }
 
 ul.post-list a.post-link:hover li::after {
-  opacity: 1;
+  opacity: 0.5;
 }
 // ul.post-list a.post-link:hover::before {
 //   transform: translateX(-500px);
@@ -347,20 +397,23 @@ ul.post-list a.post-link:hover li::after {
 
 ul.post-list a li h3 {
   // color: rgba($accent-color, 0.9);
-  color: rgb(4, 56, 124);
-  font-size: 24px;
+  // color: rgb(4, 56, 124);
+  color: #350050;
+  font-size: 22px;
 }
 
 a, a:visited {
   /* color: #28272a; */
   color: rgb(4, 56, 124);
+  // color: #350050;
   // font-family: 'Merriweather Black';
   // text-decoration: underline;
   // text-decoration-style: dotted;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Merriweather Black';
+  // font-family: 'Merriweather Black';
+  font-family: 'Rufina';
   font-weight: bolder;
 }
 
@@ -461,11 +514,11 @@ h1, h2, h3, h4, h5, h6 {
   // writing-mode: vertical-rl;
   // text-orientation: mixed;
   white-space: nowrap;
-  color: #416189;
+  color: #350050;
 }
 
 .bg-attrib a {
   font-size: 10px;
   text-decoration: underline;
-  color: #416189;
+  color: #350050;
 }

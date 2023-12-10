@@ -10,12 +10,12 @@ layout: default
     {{ content }}
 
     {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <h2 class="post-list-heading">{{ page.list_title | default: "" }}</h2>
     <ul class="post-list">
         {%- for post in site.posts -%}
 
         {% if post.external_url %}
-        <a class="post-link" href="{{ post.external_url }}" target=" _blank">
+        <a class="post-link external" href="{{ post.external_url }}" target=" _blank">
             {% else %}
             <a class="post-link" href="{{ post.url | relative_url }}">
                 {% endif %}
@@ -25,13 +25,13 @@ layout: default
 
 
                     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-                    <span class="post-meta">{{ post.date | date: date_format }}</span>
+                    <span class="post-link-meta">{{ post.date | date: date_format }}</span>
 
                     {%if post.external_url %}
 
                     <h3>{{ post.title | escape }}
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-external-link"
-                            width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#04387c" fill="none"
+                            width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke="#350050" fill="none"
                             stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" />
                             <path d="M11 7h-5a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-5" />
