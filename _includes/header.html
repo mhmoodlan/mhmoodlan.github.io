@@ -6,7 +6,7 @@
       {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
       <div style="display: flex; justify-content: space-between;">
         <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-        <a class="site-nav-link" style="line-height: 54px !important;" href="{{ site.cv_link }}" target=" _blank">CV</a>
+        <!--<a class="site-nav-link" style="line-height: 54px !important;" href="{{ site.cv_link }}" target=" _blank">CV</a>-->
       </div>
   
       {%- if titles_size > 0 -%}
